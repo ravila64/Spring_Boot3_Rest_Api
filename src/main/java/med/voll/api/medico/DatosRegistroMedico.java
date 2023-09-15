@@ -14,7 +14,10 @@ public record DatosRegistroMedico(
         @Email
             String email,
         @NotBlank
-        @Pattern(regexp = "\\d{4,15}")   // expresion regular de 4 a 6 numeros=digitos
+        String telefono,
+        @NotBlank
+        @Pattern(
+                regexp = "\\d{4,15}")   // expresion regular de 4 a 6 numeros=digitos
             String dni,
         @NotNull
             Especialidad especialidad,
