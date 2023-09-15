@@ -1,4 +1,4 @@
-package med.voll.api.medico;
+package med.voll.api.paciente;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
@@ -7,21 +7,20 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import med.voll.api.direccion.DatosDireccion;
 
-public record DatosRegistroMedico(
+public record DatosRegistroPaciente(
         @NotBlank
-            String nombre,
+        String nombre,
         @NotBlank
         @Email
-            String email,
+        String email,
         @NotBlank
         String telefono,
         @NotBlank
-         @Pattern(
-                regexp = "\\d{4,15}")   // expresion regular de 4 a 6 numeros=digitos
-            String dni,
+        @Pattern(regexp = "\\d{3}\\.?\\d{3}\\.?\\d{3}\\-?\\d{2}")
+        String documentoIdentidad,
         @NotNull
-            Especialidad especialidad,
-        @NotNull   // notnull porque direccion es objeto
         @Valid
-            DatosDireccion direccion) {
+        DatosDireccion direccion
+) {
+
 }
