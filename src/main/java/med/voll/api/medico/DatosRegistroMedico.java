@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import med.voll.api.direccion.DatosDireccion;
+import med.voll.api.direccion.DatosDireccionPaciente;
 
 public record DatosRegistroMedico(
         @NotBlank
@@ -23,5 +24,5 @@ public record DatosRegistroMedico(
             Especialidad especialidad,
         @NotNull   // notnull porque direccion es objeto
         @Valid
-            DatosDireccion direccion) {
+        DatosDireccion direccionMed) {
 }
